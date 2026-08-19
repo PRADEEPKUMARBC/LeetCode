@@ -1,0 +1,24 @@
+class Solution(object):
+    def rearrangeArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+
+        positive = []
+        negative = []
+
+        # Separate Positive and Negative Numbers
+        for i in range(len(nums)):
+            if nums[i] > 0:
+                positive.append(nums[i])
+            else:
+                negative.append(nums[i])
+        
+        # Rearrange them
+        for i in range(len(positive)):
+            nums[2 * i] = positive[i]
+            nums[(2 * i) + 1] = negative[i]
+        
+        return nums
+        
