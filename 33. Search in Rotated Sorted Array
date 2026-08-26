@@ -1,0 +1,5 @@
+        index = -1
+        for i in range(0, len(nums)):
+            if nums[i] == target:
+                index = i
+        return index
